@@ -1,0 +1,54 @@
+name: Feature Request
+description: File a feature request.
+title: "Feature: "
+labels: 
+projects: ["octo-org/1", "octo-org/44"]
+assignees:
+  - octocat
+body:
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: What is your name?
+      placeholder: ex. Sertha Taweewattana
+    validations:
+      required: false
+  - type: markdown
+    attributes: 
+      value: Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: requestType
+    attributes:
+      label: Type of request?
+      description: Select the type of your request
+      options:
+        - New Feature
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What is the OS which you want to suggest?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: detail
+    attributes:
+      label: What are the details of your suggestion?
+      description: Explain what do you want
+      value: Feature details!
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com). 
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
